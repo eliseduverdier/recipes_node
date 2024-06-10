@@ -3,12 +3,16 @@ extends layout
 block content
   h1= recipe.label
   p= recipe.type
+
   hr
-  h2 Ingredients
+
   ul
     - each ingredient in ingredients
       li
         span= ingredient.quantity
-        span= ingredient.label
+        span
+          a(href='/ingredients/'+ingredient.label) #{ingredient.label}
+
   hr
+
   p= recipe.description

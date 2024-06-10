@@ -1,6 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const { getRecipeByLabel, getIngredientsByRecipeLabel } = require('../models/recipeModel'); // Adjust the path as needed
+const { getRecipeByLabel, getIngredientsByRecipeLabel } = require('../models/recipes/recipeModel'); // Adjust the path as needed
+
+router.get('/new', function(req, res) {
+
+});
+
 // ---------------
 // GET A RECIPE
 // ---------------
