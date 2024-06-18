@@ -1,6 +1,8 @@
-extends layout
+extends ../layout
 
 block content
+  include ../menu
+
   h1= recipe.label
   p= recipe.type
 

@@ -1,10 +1,12 @@
-extends layout
+extends ../layout
 
 block content
+  include ../menu
 
-  h1= ingredient
+  h1= title
   ul
     - each recipe in recipes
       li
+        span(class=recipe.type + ' type') #{recipe.type}
         span
           a(href='/recipes/'+recipe.label) #{recipe.label}

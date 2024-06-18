@@ -1,0 +1,23 @@
+span.type {
+    border-radius: 5px;
+    padding: 3px;
+    margin-right: 5px;
+}
+
+span.type.boulange {
+    background-color: #ccff00;
+}
+
+span.type.dessert {
+    background-color: #ffcc00;
+}
+
+ul {
+    list-style: none;
+    margin: 10px 0;
+    padding: 0;
+}
+li {
+    padding: 10px 0;
+    margin: 0;
+}

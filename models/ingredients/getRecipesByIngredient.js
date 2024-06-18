@@ -1,15 +1,5 @@
 const db = require("../../db-config")
 
-const getIngredientsByLabel = (label, callback) => {
-    const sql = 'SELECT * FROM ingredients';
-    db.query(sql, [], (err, results) => {
-        if (err) {
-            return callback(err, null);
-        }
-        callback(null, results[0]);
-    });
-};
-
 const getRecipesByIngredient = (label, callback) => {
     const sql = `SELECT r.label
                  FROM ingredients i
@@ -25,7 +15,4 @@ const getRecipesByIngredient = (label, callback) => {
     });
 }
 
-module.exports = {
-    getIngredientsByLabel,
-    getRecipesByIngredient
-};
+module.exports = getRecipesByIngredient;

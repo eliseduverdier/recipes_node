@@ -1,8 +1,36 @@
+@import 'text.css';
+@import 'form.css';
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 100px;
+    font: 16px monospace;
+    background-color: #f1e441;
 }
 
 a {
-  color: #00B7FF;
+    color: #555555/*#F13F06*/;
+}
+
+
+div.back-to-home {
+    background-color: #888888/*#F19208*/;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    text-align: center;
+}
+div.back-to-home a {
+    text-decoration: none;
+    color: #f1e441;
+    font: bold 26px monospace;
+}
+
+
+.add_field {
+    background: #888888/*#F19208*/;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    text-align: center;
 }

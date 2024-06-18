@@ -2,9 +2,9 @@ extends layout
 
 block content
   h1= title
-  ul
-    - each recipe in recipes
-      li
-        span(class=recipe.type) #{recipe.type}
-        span
-          a(href='recipes/'+recipe.label) #{recipe.label}
+  p
+    a(href='recipes/') List of recipes
+  p
+    a(href='ingredients/') List of ingredients
+  p
+    a(href='recipes/create') New recipe

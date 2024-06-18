@@ -1,0 +1,26 @@
+extends ../layout
+
+block content
+
+  include ../menu
+
+  form(action='', method='POST')
+    div
+       input(placeholder='recipe name', input='text', name='recipe', value="recipe_name")
+    div(class='ingredient_field')
+       input(placeholder='quantity #1', input='text', name='ingredient_quantity[]', class='ingredient_quantity',value="123")
+       input(placeholder='ingredient #1', input='text', name='ingredient_name[]', class='ingredient_name', value='ingredient1_name')
+    div(class='ingredient_field')
+       input(placeholder='quantity #1', input='text', name='ingredient_quantity[]', class='ingredient_quantity',value="456")
+       input(placeholder='ingredient #1', input='text', name='ingredient_name[]', class='ingredient_name', value='ingredient2_name')
+    div(class='add_field') +
+    div
+        textarea(placeholder='description', rows=20, cols=70, type='text', name='description') recipe description
+    div
+      label(for='type') type
+        div
+          select(name='type')
+            option salty
+            option dessert
+    div
+      button(type=submit) submit
