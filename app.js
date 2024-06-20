@@ -1,10 +1,10 @@
+require('dotenv').config();
 const express = require('express');
 const mysql = require('mysql');
 const path = require('path');
 const app = express();
 const dbConfig = require('./db-config.js');
-var bodyParser = require('body-parser')
-
+const bodyParser = require('body-parser')
 
 // -------
 // ROUTES

@@ -2,11 +2,11 @@ const mysql = require("mysql")
 
 const dbConfig = {
     db: {
-        host: 'localhost',
-        user: 'elise',
-        password: 'password',
-        database: 'recipes',
-        connectTimeout: 60000
+        host: process.env.DATABASE_HOST,
+        user: process.env.DATABASE_USER,
+        password: process.env.DATABASE_PW,
+        database: process.env.DATABASE_DB,
+        connectTimeout: 10000
     },
     listPerPage: 10,
 };
