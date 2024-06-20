@@ -6,16 +6,13 @@ block content
 
   form(action='', method='POST')
     div
-       input(placeholder='recipe name', input='text', name='recipe', value="recipe_name")
+       input(placeholder='recipe name', input='text', name='recipe')
     div(class='ingredient_field')
-       input(placeholder='quantity #1', input='text', name='ingredient_quantity[]', class='ingredient_quantity',value="123")
-       input(placeholder='ingredient #1', input='text', name='ingredient_name[]', class='ingredient_name', value='ingredient1_name')
-    div(class='ingredient_field')
-       input(placeholder='quantity #1', input='text', name='ingredient_quantity[]', class='ingredient_quantity',value="456")
-       input(placeholder='ingredient #1', input='text', name='ingredient_name[]', class='ingredient_name', value='ingredient2_name')
+       input(placeholder='quantity #1', input='text', name='ingredient_quantity[]', class='ingredient_quantity')
+       input(placeholder='ingredient #1', input='text', name='ingredient_name[]', class='ingredient_name',)
     div(class='add_field') +
     div
-        textarea(placeholder='description', rows=20, cols=70, type='text', name='description') recipe description
+        textarea(placeholder='description', rows=20, cols=70, type='text', name='description')
     div
       label(for='type') type
         div

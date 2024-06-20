@@ -16,9 +16,6 @@ router.post('/create', urlencodedParser, (req, res) => {
         if (err) {
             return res.status(500).json({error: err.message});
         }
-        return res.json(result);
     });
-    return res.json(req.body);
-
-    // res.redirect('/');
+    res.redirect('/recipes/');
 });

@@ -3,7 +3,7 @@ var router = express.Router();
 const db = require('../../db-config'); // Adjust the path as needed
 
 router.get('/', function (req, res, next) {
-    const sql = 'SELECT * FROM ingredients';
+    const sql = 'SELECT * FROM recipes_ingredients';
 
     db.query(sql, (err, results) => {
         if (err) {
