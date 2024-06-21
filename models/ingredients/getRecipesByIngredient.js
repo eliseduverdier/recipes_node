@@ -8,9 +8,7 @@ const getRecipesByIngredient = (label, callback) => {
                  WHERE i.label = '${label}'`;
 
     db.query(sql, [label], (err, results) => {
-        if (err) {
-            return callback(err, null);
-        }
+        if (err) throw err;
         callback(null, results);
     });
 }

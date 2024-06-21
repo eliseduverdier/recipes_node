@@ -23,3 +23,7 @@ button {
 .ingredient_name {
     width: 70%;
 }
+
+button.small {
+    width: initial;
+}

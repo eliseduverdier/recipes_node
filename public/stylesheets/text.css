@@ -4,13 +4,10 @@ span.type {
     margin-right: 5px;
 }
 
-span.type.boulange {
-    background-color: #ccff00;
-}
-
-span.type.dessert {
-    background-color: #ffcc00;
-}
+span.type.boulange {background-color: #C16F2C;}
+span.type.dessert {background-color: #C12C80;}
+span.type.salty {background-color: #3194AB;}
+span.type.other {background-color: #727173;}
 
 ul {
     list-style: none;

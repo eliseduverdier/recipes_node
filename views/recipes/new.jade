@@ -17,7 +17,7 @@ block content
       label(for='type') type
         div
           select(name='type')
-            option salty
-            option dessert
+            - each type in types
+              option #{type}
     div
       button(type=submit) submit
