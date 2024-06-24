@@ -9,15 +9,15 @@ const bodyParser = require('body-parser')
 // -------
 // ROUTES
 // -------
-var indexPage = require('./routes/index');
+const indexPage = require('./routes/index');
 // INGREDIENTS
-var listIngredients = require('./routes/ingredients/list');
-var viewIngredient = require('./routes/ingredients/view');
+const listIngredients = require('./routes/ingredients/list');
+const viewIngredient = require('./routes/ingredients/view');
 // RECIPES
-var deleteRecipe = require('./routes/recipes/delete');
-var newRecipe = require('./routes/recipes/new');
-var listRecipes = require('./routes/recipes/list');
-var viewRecipe = require('./routes/recipes/view');
+const deleteRecipe = require('./routes/recipes/delete');
+const newRecipe = require('./routes/recipes/new');
+const listRecipes = require('./routes/recipes/list');
+const viewRecipe = require('./routes/recipes/view');
 
 index.use('/', indexPage);
 index.use('/ingredients', listIngredients);

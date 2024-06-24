@@ -16,7 +16,8 @@
     "jade": "^1.9.2",
     "morgan": "~1.9.1",
     "mysql": "^2.18.1",
-    "mysql2": "^3.10.0"
+    "mysql2": "^3.10.0",
+    "uglify-js": "^3.18.0"
   },
   "licence": "MIT",
   "devDependencies": {
