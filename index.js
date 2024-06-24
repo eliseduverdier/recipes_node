@@ -1,9 +1,7 @@
 require('dotenv').config();
 const express = require('express');
-const mysql = require('mysql');
 const path = require('path');
 const index = express();
-const dbConfig = require('./db-config.js');
 const bodyParser = require('body-parser')
 
 // -------
