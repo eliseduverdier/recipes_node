@@ -9,7 +9,7 @@ const bodyParser = require('body-parser')
 // -------
 // ROUTES
 // -------
-var index = require('./routes/index');
+var indexPage = require('./routes/index');
 // INGREDIENTS
 var listIngredients = require('./routes/ingredients/list');
 var viewIngredient = require('./routes/ingredients/view');
@@ -19,7 +19,7 @@ var newRecipe = require('./routes/recipes/new');
 var listRecipes = require('./routes/recipes/list');
 var viewRecipe = require('./routes/recipes/view');
 
-index.use('/', index);
+index.use('/', indexPage);
 index.use('/ingredients', listIngredients);
 index.use('/ingredients', viewIngredient);
 index.use('/recipes', deleteRecipe);
