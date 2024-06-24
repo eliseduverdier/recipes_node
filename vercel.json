@@ -12,6 +12,7 @@
       "dest": "index.js"
     }
   ],
-  "buildCommand": "node index.js",
+  "buildCommand": null,
+  "framework": null,
   "installCommand": "npm install"
 }
