@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const mysql = require('mysql');
 const path = require('path');
-const app = express();
+const index = express();
 const dbConfig = require('./db-config.js');
 const bodyParser = require('body-parser')
 
@@ -14,33 +14,35 @@ var index = require('./routes/index');
 var listIngredients = require('./routes/ingredients/list');
 var viewIngredient = require('./routes/ingredients/view');
 // RECIPES
+var deleteRecipe = require('./routes/recipes/delete');
 var newRecipe = require('./routes/recipes/new');
 var listRecipes = require('./routes/recipes/list');
 var viewRecipe = require('./routes/recipes/view');
 
-app.use('/', index);
-app.use('/ingredients', listIngredients);
-app.use('/ingredients', viewIngredient);
-app.use('/recipes', newRecipe);
-app.use('/recipes', listRecipes);
-app.use('/recipes', viewRecipe);
+index.use('/', index);
+index.use('/ingredients', listIngredients);
+index.use('/ingredients', viewIngredient);
+index.use('/recipes', deleteRecipe);
+index.use('/recipes', newRecipe);
+index.use('/recipes', listRecipes);
+index.use('/recipes', viewRecipe);
 
 
 // ----------
 // TEMPLATES
 // ----------
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+index.set('views', path.join(__dirname, 'views'));
+index.set('view engine', 'jade');
 
-app.use(express.static(path.join(__dirname, 'public')));
+index.use(express.static(path.join(__dirname, 'public')));
 
 // Middleware to handle JSON requests
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+index.use(express.json());
+index.use(express.urlencoded({ extended: true }));
 const jsonParser = bodyParser.json()
 
 // Define the port and start the server
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
+index.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });

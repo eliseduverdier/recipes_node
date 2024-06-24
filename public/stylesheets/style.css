@@ -12,9 +12,8 @@ a {
     color: #555555/*#F13F06*/;
 }
 
-
 div.back-to-home {
-    background-color: #888888/*#F19208*/;
+    background-color: #ffffff/*#F19208*/;
     width: 50px;
     height: 50px;
     border-radius: 50px;
@@ -26,11 +25,14 @@ div.back-to-home a {
     font: bold 26px monospace;
 }
 
-
 .add_field {
-    background: #888888/*#F19208*/;
+    background: #ffffff/*#F19208*/;
     width: 30px;
     height: 30px;
     border-radius: 50px;
     text-align: center;
+}
+
+hr {
+    border: 3px #ffffff solid;
 }

@@ -12,9 +12,13 @@ block content
     - each ingredient in ingredients
       li
         span= ingredient.quantity
+        span= ' '
         span
           a(href='/ingredients/'+ingredient.label) #{ingredient.label}
 
   hr
 
   p= recipe.description
+
+  a(href='/recipes/'+recipe.label+'/delete')
+    button(class='delete') delete

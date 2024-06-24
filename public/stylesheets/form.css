@@ -6,6 +6,7 @@ input, select, button, textarea {
     background: #f1e441;
     border: 3px solid #555555/*#F13F06*/;
     padding: 5px;
+    margin: 5px;
     width: 100%;
     font: normal 16px monospace;
 }
@@ -26,4 +27,13 @@ button {
 
 button.small {
     width: initial;
+}
+
+
+button.small, button.delete {
+    width: initial;
+}
+
+button.delete {
+    float: right;
 }

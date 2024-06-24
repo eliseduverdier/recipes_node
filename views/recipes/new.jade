@@ -15,6 +15,7 @@ block content
         textarea(placeholder='description', rows=20, cols=70, type='text', name='description')
     div
       label(for='type') type
+        span(class='add_type') [new]
         div
           select(name='type')
             - each type in types
