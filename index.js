@@ -30,7 +30,7 @@ index.use('/recipes', viewRecipe);
 // TEMPLATES
 // ----------
 index.set('views', path.join(__dirname, 'views'));
-index.set('view engine', 'jade');
+index.set('view engine', 'pug');
 
 index.use(express.static(path.join(__dirname, 'public')));
 
@@ -42,5 +42,5 @@ const jsonParser = bodyParser.json()
 // Define the port and start the server
 const PORT = process.env.PORT || 3000;
 index.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+    console.log(`Server running on http://localhost:${PORT}`);
 });

@@ -22,7 +22,7 @@ CREATE TABLE recipes_recipe_has_ingredient
 (
     `recipe_id`     INT,
     `ingredient_id` INT,
-    'quantity'      VARCHAR(255),
+    `quantity`      VARCHAR(255),
     FOREIGN KEY (recipe_id) REFERENCES recipes_recipes (id),
     FOREIGN KEY (ingredient_id) REFERENCES recipes_ingredients (id)
 );

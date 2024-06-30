@@ -9,7 +9,7 @@ block content
   hr
 
   ul
-    - each ingredient in ingredients
+    each ingredient in ingredients
       li
         span= ingredient.quantity
         span= ' '
@@ -18,7 +18,7 @@ block content
 
   hr
 
-  p= recipe.description
+  pre= recipe.description
 
   a(href='/recipes/'+recipe.label+'/delete')
     button(class='delete') delete

@@ -5,7 +5,7 @@ block content
 
   h1= ingredient
   ul
-    - each recipe in recipes
+    each recipe in recipes
       li
         span
           a(href='/recipes/'+recipe.label) #{recipe.label}

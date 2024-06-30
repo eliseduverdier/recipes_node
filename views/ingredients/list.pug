@@ -4,7 +4,7 @@ block content
   include ../menu
 
   ul
-    - each ingredient in ingredients
+    each ingredient in ingredients
       li
         span
           a(href='/ingredients/'+ingredient.label) #{ingredient.label}

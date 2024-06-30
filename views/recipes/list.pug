@@ -7,7 +7,7 @@ block content
   a(href='/recipes/create')
     button#new_recipe(class='small') New
   ul
-    - each recipe in recipes
+    each recipe in recipes
       li
         span(class=recipe.type + ' type') #{recipe.type}
         span
