@@ -2,7 +2,7 @@
 const {Pool} = require('pg');
 // const {initDatabase} = require('./models/initDatabase')
 
-const pool = new Pool({
+const db = new Pool({
     host: process.env.DATABASE_HOST,
     user: process.env.DATABASE_USER,
     password: process.env.DATABASE_PW,
@@ -13,17 +13,17 @@ const pool = new Pool({
     }
 });
 
-pool.connect((err, client, release) => {
+db.connect((err, client, release) => {
     if (err) {
         console.error('Error connecting to the database:', err.stack);
-        return;
+        throw err;
     }
     console.log('Connected to the database.');
     release();
     //initDatabase();
 });
 
-module.exports = pool;
+module.exports = db;
 
 /*/
 const mysql = require("mysql")

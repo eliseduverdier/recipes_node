@@ -1,4 +1,5 @@
-const db = require("../../db-config")
+// import { sql } from '@vercel/postgres';
+const db = require('../../db-config');
 
 const createRecipe = (requestBody, callback) => {
 
@@ -13,7 +14,7 @@ const createRecipe = (requestBody, callback) => {
     }
     let ingredients = matchIngredientsQuantity(ingredientsNames, ingredientsQuantities);
     // INSERTING THE RECIPE
-    const sql = "INSERT INTO recipes_recipes (label, description, type) VALUES (?,?,?)";
+    const sql = `INSERT INTO recipes_recipes (label, description, type) VALUES (?,?,?)`;
     const recipeId = db.query(sql, [recipe, description, type], (err, resultRecipe) => {
         if (err) throw err;
 
