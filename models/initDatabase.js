@@ -1,6 +1,6 @@
 const db = require("../db-config")
 
-const CREATE_RECIPE = `CREATE TABLE recipes_recipes
+const CREATE_RECIPE = `CREATE TABLE IF NOT EXISTS recipes_recipes
                        (
                            \`id\`          INT(11)      NOT NULL auto_increment,
                            \`label\`       VARCHAR(255) NOT NULL,
@@ -9,14 +9,14 @@ const CREATE_RECIPE = `CREATE TABLE recipes_recipes
                            PRIMARY KEY (\`id\`),
                            UNIQUE \`idx_label_unique\` (\`label\`(255))
                        );`;
-const CREATE_INGREDIENTS = `CREATE TABLE recipes_ingredients
+const CREATE_INGREDIENTS = `CREATE TABLE IF NOT EXISTS recipes_ingredients
                             (
                                 \`id\`    INT(11)      NOT NULL auto_increment,
                                 \`label\` VARCHAR(255) NOT NULL,
                                 PRIMARY KEY (\`id\`),
                                 UNIQUE \`idx_label_unique\` (\`label\`(255))
                             );`;
-const CREATE_RHI = `CREATE TABLE recipes_recipe_has_ingredient
+const CREATE_RHI = `CREATE TABLE IF NOT EXISTS recipes_recipe_has_ingredient
                     (
                         \`recipe_id\`     INT,
                         \`ingredient_id\` INT,
@@ -24,18 +24,18 @@ const CREATE_RHI = `CREATE TABLE recipes_recipe_has_ingredient
                         FOREIGN KEY (recipe_id) REFERENCES recipes_recipes (id),
                         FOREIGN KEY (ingredient_id) REFERENCES recipes_ingredients (id)
                     );`;
-const INSERT_RECIPE = `INSERT INTO recipes_recipes
+const INSERT_RECIPE = `INSERT IGNORE INTO recipes_recipes
                        VALUES (1, 'pain', 'recette du pain', 'boulange'),
-                              (2, 'cookies', 'Sucre + beurre, ajouter farine, ajouter pepites choco.\\nCuire 9 minutes à 200%', 'dessert')
+                              (2, 'cookies', 'Sucre + beurre, ajouter farine, ajouter pepites choco.\nCuire 9 minutes à 200%', 'dessert')
 ;`;
-const INSERT_INGREDIENTS = `INSERT INTO recipes_ingredients
+const INSERT_INGREDIENTS = `INSERT IGNORE INTO recipes_ingredients
                             VALUES (1, 'farine'),
                                    (2, 'beurre'),
                                    (3, 'sucre'),
                                    (4, 'eau'),
                                    (5, 'chocolat')
 ;`;
-const INSERT_RHI = `INSERT INTO recipes_recipe_has_ingredient
+const INSERT_RHI = `INSERT IGNORE INTO recipes_recipe_has_ingredient
                     VALUES
 -- pain
 (1, 1, '500g'), -- farine
@@ -49,12 +49,12 @@ const INSERT_RHI = `INSERT INTO recipes_recipe_has_ingredient
 
 const initDatabase = (callback) => {
     db.query(CREATE_RECIPE, [], (err, results) => {
-        db.query(CREATE_INGREDIENTS, [], (err, results) => {
-            db.query(CREATE_RHI, [], (err, results) => {
-                db.query(INSERT_RECIPE, [], (err, results) => {
-                    db.query(INSERT_INGREDIENTS, [], (err, results) => {
-                        db.query(INSERT_RHI, [], (err, results) => {
-                            callback(null, results);
+        db.query(CREATE_INGREDIENTS, [], (err, results1) => {
+            db.query(CREATE_RHI, [], (err, results2) => {
+                db.query(INSERT_RECIPE, [], (err, results3) => {
+                    db.query(INSERT_INGREDIENTS, [], (err, results4) => {
+                        db.query(INSERT_RHI, [], (err, results5) => {
+                            callback(null, results5);
                         });
                     });
                 });
