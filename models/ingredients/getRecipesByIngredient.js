@@ -5,11 +5,11 @@ const getRecipesByIngredient = (label, callback) => {
                  FROM recipes_ingredients i
                           JOIN recipes_recipe_has_ingredient rhi ON i.id = rhi.ingredient_id
                           JOIN recipes_recipes r ON rhi.recipe_id = r.id
-                 WHERE i.label = '${label}'`;
+                 WHERE i.label = $1`;
 
     db.query(sql, [label], (err, results) => {
         if (err) throw err;
-        callback(null, results);
+        callback(null, results.rows);
     });
 }
 

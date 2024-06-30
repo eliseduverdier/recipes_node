@@ -11,7 +11,7 @@ router.get('/', function (req, res, next) {
         }
         res.render('ingredients/list', {
             title: 'Recipes',
-            ingredients: results
+            ingredients: results.rows
         });
     });
 });
