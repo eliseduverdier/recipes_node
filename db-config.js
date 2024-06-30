@@ -1,4 +1,5 @@
-const { Pool } = require('pg');
+const {Pool} = require('pg');
+const {initDatabase} = require('./models/initDatabase')
 
 const pool = new Pool({
     host: process.env.DATABASE_HOST,
@@ -18,7 +19,10 @@ pool.connect((err, client, release) => {
     }
     console.log('Connected to the database.');
     release();
+    initDatabase();
 });
+
+
 
 module.exports = pool;
 
