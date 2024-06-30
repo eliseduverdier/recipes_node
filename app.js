@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const path = require('path');
-const index = express();
+const app = express();
 const bodyParser = require('body-parser')
 
 // -------
@@ -17,30 +17,30 @@ const newRecipe = require('./routes/recipes/new');
 const listRecipes = require('./routes/recipes/list');
 const viewRecipe = require('./routes/recipes/view');
 
-index.use('/', indexPage);
-index.use('/ingredients', listIngredients);
-index.use('/ingredients', viewIngredient);
-index.use('/recipes', deleteRecipe);
-index.use('/recipes', newRecipe);
-index.use('/recipes', listRecipes);
-index.use('/recipes', viewRecipe);
+app.use('/', indexPage);
+app.use('/ingredients', listIngredients);
+app.use('/ingredients', viewIngredient);
+app.use('/recipes', deleteRecipe);
+app.use('/recipes', newRecipe);
+app.use('/recipes', listRecipes);
+app.use('/recipes', viewRecipe);
 
 
 // ----------
 // TEMPLATES
 // ----------
-index.set('views', path.join(__dirname, 'views'));
-index.set('view engine', 'pug');
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
 
-index.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Middleware to handle JSON requests
-index.use(express.json());
-index.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 const jsonParser = bodyParser.json()
 
 // Define the port and start the server
 const PORT = process.env.PORT || 3000;
-index.listen(PORT, () => {
+app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });
