@@ -7,7 +7,9 @@ span.type {
 span.type.boulange {background-color: #C16F2C;}
 span.type.dessert {background-color: #C12C80;}
 span.type.salty {background-color: #3194AB;}
+span.type.salé {background-color: #3194AB;}
 span.type.other {background-color: #727173;}
+span.type.autre {background-color: #727173;}
 
 ul {
     list-style: none;
