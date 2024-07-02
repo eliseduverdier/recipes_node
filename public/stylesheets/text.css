@@ -2,6 +2,7 @@ span.type {
     border-radius: 5px;
     padding: 3px;
     margin-right: 5px;
+    font-size: .8em;
 }
 
 span.type.boulange {background-color: #C16F2C;}

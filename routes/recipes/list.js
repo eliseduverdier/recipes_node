@@ -1,15 +1,14 @@
 var express = require('express');
 var router = express.Router();
-const db = require('../../db-config'); // Adjust the path as needed
+const db = require('../../db-config');
+const getRecipes = require("../../models/recipes/getRecipes");
 
 router.get('/', (req, res) => {
-    const sql = 'SELECT * FROM recipes_recipes;';
-
-    db.query(sql, (err, results) => {
+    getRecipes((err, results) => {
         if (err) {
             return res.status(500).json({error: err.message});
         }
-        // res.json(results)
+
         res.render('recipes/list', {
             title: 'Recipes',
             recipes: results.rows
