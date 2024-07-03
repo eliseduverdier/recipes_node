@@ -3,18 +3,19 @@ form {
 }
 
 input, select, button, textarea {
-    background: #f1e441;
-    border: 3px solid #555555/*#F13F06*/;
+    background: #333333;
+    border: 3px solid #AAAAAA/*#F13F06*/;
     padding: 5px;
     margin: 5px;
     width: 100%;
     font: normal 16px monospace;
+    color: #eeeeee;
     border-radius: 5px;
 }
 
 button {
-    background-color: #555555/*#F13F06*/;
-    color: #f1e441;
+    background-color: #AAAAAA/*#F13F06*/;
+    color: #eeeeee;
     margin: 10px 0;
 }
 

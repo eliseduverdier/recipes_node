@@ -8,10 +8,9 @@ router.get('/', (req, res) => {
         if (err) {
             return res.status(500).json({error: err.message});
         }
-
         res.render('recipes/list', {
             title: 'Recipes',
-            recipes: results.rows
+            recipes: results
         });
     });
 });
