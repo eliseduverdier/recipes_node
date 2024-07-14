@@ -38,3 +38,8 @@ div.back-to-home a {
 hr {
     border: 3px #ffffff solid;
 }
+div#login {
+    color: #eeeeee;
+    float: right;
+    font-size: 16px;
+}

@@ -1,0 +1,13 @@
+extends ../layout
+
+block content
+  include ../menu
+
+  form(action='', method='POST')
+    div
+       input(placeholder='username', input='text', name='username')
+    div
+       input(placeholder='password', input='text', name='password')
+    div
+      button(type=submit) submit
+    div #{body}

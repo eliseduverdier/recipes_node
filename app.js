@@ -8,6 +8,7 @@ const bodyParser = require('body-parser')
 // ROUTES
 // -------
 const indexPage = require('./routes/index');
+const loginPage = require('./routes/login/login');
 // INGREDIENTS
 const listIngredients = require('./routes/ingredients/list');
 const viewIngredient = require('./routes/ingredients/view');
@@ -18,6 +19,7 @@ const listRecipes = require('./routes/recipes/list');
 const viewRecipe = require('./routes/recipes/view');
 
 app.use('/', indexPage);
+app.use('/login', loginPage);
 app.use('/ingredients', listIngredients);
 app.use('/ingredients', viewIngredient);
 app.use('/recipes', deleteRecipe);
