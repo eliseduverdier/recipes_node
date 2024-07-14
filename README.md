@@ -11,3 +11,4 @@ make run
 ## todo
 - [ ] functional tests
 - [ ] edit
+- [ ] login
