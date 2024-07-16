@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-const db = require('../../db-config');
 const getRecipes = require("../../models/recipes/getRecipes");
 
 router.get('/', (req, res) => {

@@ -27,7 +27,6 @@ app.use('/recipes', newRecipe);
 app.use('/recipes', listRecipes);
 app.use('/recipes', viewRecipe);
 
-
 // ----------
 // TEMPLATES
 // ----------
@@ -38,11 +37,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Middleware to handle JSON requests
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({extended: true}));
 const jsonParser = bodyParser.json()
 
 // Define the port and start the server
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
-});
+// const PORT = process.env.PORT || 3000;
+// app.listen(PORT, () => {
+//     console.log(`Server running on http://localhost:${PORT}`);
+// });
+
+module.exports = app;
